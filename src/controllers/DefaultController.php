@@ -12,7 +12,7 @@ class DefaultController extends Controller
     public function actionIndex()
     {
         $layerClass = Yii::$app->request->post('layerClass');
-        $layerClass = trim($layerClass, '"');
+        $layerClass = trim((string)$layerClass, '"');
 
         $config = Yii::$app->request->post('config');
         $config = Json::decode($config);
